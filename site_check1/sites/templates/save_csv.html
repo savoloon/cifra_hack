@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/bugbustes3.png">
+    <title>Вход</title>
+
+</head>
+<body>
+    <h1>Сохраненные значения</h1>
+    <p>Выбранный вариант: {{ selected_option }}</p>
+    <p>Ответ на радиокнопку: {{ radio_option }}</p>
+    <p>Значение чекбокса: {{ checkbox_option }}</p>
+
+    <h2>Таблица CSV</h2>
+    <table>
+        <thead>
+            <tr>
+                {% for column in data.0 %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data|slice:"1:" %}  {# Пропустить первую строку (заголовки) #}
+                <tr>
+                    {% for column in row %}
+                        <td>{{ column }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<body>

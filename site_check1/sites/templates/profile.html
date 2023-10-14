@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Fast AI</title>
+</head>
+<body>
+    <div class="head">
+        <div class="row">
+            <a href="{% url 'index' %}"><img class="icon" src="../static/images/bugbustes3.png" ></a>
+            <a href="{% url 'create_something' %}" class="headlink font1">Создать</a>
+            <a href="{% url 'mymodel' %}" class="headlink font1">Мои модели</a>
+        </div>
+        <a href="{% url 'profile' %}"><img class="icon" src="../static/images/acc.svg" ></a>
+    </div>
+    <div class="main_reg">
+        <img src="static/images/acc.svg" width="250px">
+        <div class="he3  font1">Моя информация</div>
+        <div class="container con2" style="text-align: left;">
+            <div class="font1 font2" font-size="20px"><b>Логин: {{ user.username }}</b> <output class="font1" id="login"></output></div>
+            <div class="font1 font2" font-size="20px"><b>Статус: </b><output class="font1" id="status"></output></div>
+            <a href="{% url 'logout' %}">
+                <button class="but1 font1">Выйти</button>
+            </a>
+        </div>
+    </div>

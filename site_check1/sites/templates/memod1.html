@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Результаты</title>
+</head>
+<body>
+    <div class="head">
+        <div class="row">
+            <a href="/"><img class="icon" src="../static/images/bugbustes3.png" ></a>
+            <a href="{% url 'create_something' %}" class="headlink font1">Создать</a>
+            <a href="{% url 'mymodel' %}" class="headlink font1">Мои модели</a>
+        </div>
+        <a href="{% url 'profile' %}"><img class="icon" src="../static/images/acc.svg" ></a>
+    </div>
+    <div class="main_reg">
+        <div class="container con2">
+            <div class="he3 font1">Результаты</div>
+            <div class="font1 base">
+            </div>
+            <a href="{{ download_link }}" class="btn btn-primary">
+                <button class="but1 font1">Скачать файл с предсказаниями</button>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/bugbustes3.png">
+    <title>Вход</title>
+
+</head>
+<body>
+    <h1>Содержимое CSV файла</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for column in data.0 %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data|slice:"1:" %}  {# Пропустить первую строку (заголовки) #}
+                <tr>
+                    {% for column in row %}
+                        <td>{{ column }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Выберите значения</h2>
+    <form method="post" action="{% url 'train_csv' %}?name={{ name }}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Тренировать</button>
+    </form>
+</body>
+</html>

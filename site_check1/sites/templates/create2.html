@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Загрузка</title>
+</head>
+<body>
+    <div class="head">
+        <div class="row">
+            <a href="/"><img class="icon" src="../static/images/bugbustes3.png" ></a>
+            <a href="{% url 'create_something' %}" class="headlink font1">Создать</a>
+            <a href="{% url 'mymodel' %}" class="headlink font1">Мои модели</a>
+        </div>
+        <a href="../../ver2/acc.html"><img class="icon" src="../static/images/acc.svg" ></a>
+    </div>
+    <div class="main_reg">
+        <div class="h1  font1">Загрузить данные</div>
+        <div class="container" >
+            <div class="font2 font1" style="text-align: justify;" >
+                Необходимо выполнить следующий шаг: загрузить данные в формате CSV.
+            </div>
+            <div class="font2 font1" style="text-align: justify;" >
+                Мы рекомендуем провести следующие действия с целью улучшения работы модели:<br>исключить из рассмотрения неинформативные столбцы, такие как "id" и "name".
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <input type="file" name="csv_file" id="csv_file" class="inputfile" />
+                    <label for="csv_file">Выбрать файл</label>
+                    <button class="but1 font1" type="submit">Загрузить CSV</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="head">
+        <a href="{% url 'index' %}"><img class="icon" src="../static/images/bugbustes3.png"></a>
+        <a href="#"><img class="icon" src="../static/images/acc.svg"></a>
+    </div>
+    <div class="main_reg">
+        <div class="container">
+            <span class="he3 font1">Регистрация</span>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="but1 font1" width="300px">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

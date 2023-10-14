@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style4.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Fast AI</title>
+</head>
+<body>
+    <div class="head01">
+        <form action="/"><button class="but1 type2 font1">Главная</button></form>
+        <form action="/"><button class="but1 type2 font1">О нас</button></form>
+        <form action="/"><button class="but1 type2 font1">Услуги</button></form>
+        <form action="login"><button class="but1 type2 font1">Войти</button></form>
+        <form action="register"><button class="but1 font1">Зарегистрироваться</button></form>
+    </div>
+    <div class="main-st"  style="background-image: url(../static/images/aifast.png);">
+        <span class="h1 font1" style="font-size: 70px; padding: 90px ;text-shadow:
+        3px 3px 5px #F5F5F5,
+        -3px 3px 5px #F5F5F5,
+        -3px -3px 5px #F5F5F5,
+        3px -3px 5px #F5F5F5; ">Услуги</span>
+        <div class="row">
+            <div></div>
+        </div>
+    </div>
+    <div class="main-st"  style="background-color: rgba(230, 230, 230, 0.9)">
+        <div>
+            <div id="offer1" class="font1 h1" >LITE</div>
+            <p class="font1 font2" style="max-width: 60%;">С нашим сервисом вы имеете возможность создать собственную модель, основанную на ваших уникальных данных, с помощью обучения.</p>
+            <form action="register"><button class="but1 font1 type2">Оформить</button></form>
+        </div>
+    </div>
+
+    <div class="main-st"  style="background-color: rgba(230, 230, 230, 0.1)">
+        <div>
+            <div id="offer2" class="font1 h1">PRO</div>
+            <p class="font1 font2" style="max-width: 60%;">Разработка и обучение специализированной модели, а затем создание инновационного приложения, ориентированного на работу с этой моделью. Для получения этой услуги пожалуйста подайте заявку в форме ниже.</p>
+            <form action="register"><button class="but1 font1 type2">Оформить</button></form>
+        </div>
+    </div>
+    <div class="main-st"  style="background-color: rgba(230, 230, 230, 0.4)">
+        <div>
+            <div id="offer3" class="font1 h1">MASTER</div>
+            <p class="font1 font2" style="max-width: 60%;">Консультационный анализ компании с целью выявления потенциальных возможностей для внедрения инновационных решений, разработка соответствующей модели, создание пользовательских приложений и их интеграция в бизнес-процессы. Для получения этой услуги пожалуйста подайте заявку в форме ниже.</p>
+            <form action="register"><button class="but1 font1 type2">Оформить</button></form>
+        </div>
+    </div>
+    <div class="main-st" style="margin: 25px; text-align: center;" >
+        <div class="container" >
+            <div id="contact" class="font1 he3">Оставить заявку</div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="but1 font1" type="submit">Оставить заявку</button>
+            </form>
+        </div>
+    </div>
+    <div class="butt row" style="background-color: rgba(255, 255, 255, 0.618)">
+        <div class="sign font1">(c)BugBusters </div>
+        <div class="sign font1">
+            <div>Контакты</div>   
+            <div>+7(***)***-**-**</div>   
+            <div>+7(***)***-**-**</div>   
+        </div>
+        <div class="sign font1">
+            <div>Адрес</div>   
+        </div>
+    </div>
+</body>
+</html>

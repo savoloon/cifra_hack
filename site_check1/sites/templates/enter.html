@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/bugbustes3.png">
+    <title>Вход</title>
+
+</head>
+<body>
+    <div class="head">
+        <a href="{% url 'index' %}"><img class="icon" src="../static/images/bugbustes3.png" ></a>
+        <a href="#"><img class="icon" src="../static/images/acc.svg"></a>
+    </div>
+    <div class="main_reg">
+        <div class="container">
+            <span class="he3 font1">Вход</span>
+            <form method="post">
+                {% csrf_token %}
+{#                <input type="login" id="username" placeholder="Логин">#}
+{#                <input type="password" id="password" placeholder="Пароль">#}
+                {{ form.as_p }}
+                <a href="profile">
+                    <button class="but1 font1" width="300px">Войти</button>
+                </a>
+            </form>
+            <a class="link font1" href="register">Зарегистрироваться</a>
+        </div>
+    </div>
+</body>
+</html>

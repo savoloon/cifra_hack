@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Fast AI</title>
+</head>
+<body>
+    <div class="head">
+        <div class="row">
+            <a href="{% url 'index' %}"><img class="icon" src="../static/images/bugbustes3.png" ></a>
+            <a href="{% url 'create_something' %}" class="headlink font1">Создать</a>
+            <a href="{% url 'mymodel' %}" class="headlink font1">Мои модели</a>
+        </div>
+       <a href="{% url 'profile' %}"><img class="icon" src="../static/images/acc.svg" ></a>
+    </div>
+    <div class="main_reg">
+        <div class="h1  font1">Мои модели</div>
+        <div class="container con2">
+            <div class="row" style="justify-content: space-around;">
+                <div class="font1 he3">модели</div>
+                <div class="font1 he3">статус</div>
+            </div>
+            <div class="container" style="background-color: #D9D9D9; width: 90%;">
+                {% for name in names %}
+                    <div class="row" style="justify-content: space-around;">
+                        <button class="but1 type2 font1"><output></output>{{ name }}</button>
+                        <a href="{% url 'use_mod' %}?file_name={{ name }}">
+                            <button class="but1 font1">Использовать</button>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

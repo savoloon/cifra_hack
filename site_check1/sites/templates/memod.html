@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style5.css">
+    <link rel="shortcut icon" href="../static/images/fastAI.png">
+    <title>Моя модель 1</title>
+</head>
+<body>
+<div class="head">
+    <div class="row">
+        <a href="{% url 'index' %}"><img class="icon" src="../static/images/bugbustes3.png"></a>
+        <a href="{% url 'create_something' %}" class="headlink font1">Создать</a>
+        <a href="{% url 'mymodel' %}" class="headlink font1">Мои модели</a>
+    </div>
+    <a href="{% url 'profile' %}"><img class="icon" src="../static/images/acc.svg"></a>
+</div>
+<div class="main_reg">
+    <div class="h1  font1">Моя модель 1</div>
+    <div class="container">
+        <div class="font2 font1" style="text-align: justify;">
+            Пожалуйста, загрузите данные в формате CSV, соответствующие формату, на котором производилось обучение модели.
+        </div>
+        <div class="row">
+            <form class="row" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="csv_file" id="csv_file" class="inputfile" />
+                <label for="csv_file">Выбрать файл</label>
+                <button class="but1 font1">Предсказать</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
